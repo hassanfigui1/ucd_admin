@@ -55,13 +55,13 @@ export default function SideNavbar({}: Props) {
           },
           {
             title: "event",
-            href: "/events",
+            href: "/pages/tasks",
             icon: Settings,
             variant: "ghost"
           },
           {
             title: "departements",
-            href: "/departement",
+            href: "/pages/departement",
             icon: Settings,
             variant: "ghost"
           },

@@ -1,93 +1,3 @@
-// /**
-//  * eslint-disable @next/next/no-img-element
-//  *
-//  * @format
-//  */
-
-// /** @format */
-// "use client";
-
-// import { DataTable } from "@/components/DataTable";
-// import PageTitle from "@/components/PageTitle";
-// import EditDialog from "@/components/dialog/dialog";
-// import { ColumnDef } from "@tanstack/react-table";
-// type Props = {};
-// type Actualite = {
-//   title: string;
-//   content: string;
-//   updatedAt: Date;
-//   createdAt_: Date;
-// };
-
-// const columns: ColumnDef<Actualite>[] = [
-//   {
-//     accessorKey: "name",
-//     header: "Name",
-//     cell: ({ row }) => {
-//       return (
-//         <div className="flex gap-2 items-center">
-//           <img
-//             className="h-10 w-10"
-//             src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue(
-//               "name"
-//             )}`}
-//             alt="user-image"
-//           />
-//           <p>{row.getValue("name")} </p>
-//         </div>
-//       );
-//     }
-//   },
-//   {
-//     accessorKey: "title",
-//     header: "title"
-//   },
-//   {
-//     accessorKey: "createdAt_",
-//     header: "Created At"
-//   },
-//   {
-//     accessorKey: "updatedAt",
-//     header: "Updated At"
-//   },
-//   {
-//     accessorKey: "modify",
-//     header: "modify",
-//     cell: ({ row }) => {
-//       const handleUpdate = () => {
-//         // Define handleUpdate function
-//         // Handle update logic here
-//         console.log("Update button clicked");
-//       };
-//       return (
-//         <EditDialog info={data[row.index]}/>
-//       );
-//     }
-//   }
-// ];
-
-// const data: Actualite[] = [
-//   {
-//     title: "Lorem Ipsum",
-//     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-//     updatedAt: new Date("2023-01-01"),
-//     createdAt_: new Date("2023-01-01")
-//   },
-//   {
-//     title: "Vivamus Mattis",
-//     content: "Vivamus mattis lorem nec sem feugiat, nec ullamcorper tortor convallis.",
-//     updatedAt: new Date("2023-01-01"),
-//     createdAt_: new Date("2023-01-01")
-//   }
-// ];
-// export default function ActualityPage({}: Props) {
-//   return (
-//     <div className="flex flex-col gap-5 w-full">
-//       <PageTitle title="Actualite" />
-//       <DataTable columns={columns} data={data} />
-//     </div>
-//   );
-// }
 /**
  * eslint-disable @next/next/no-img-element
  *
@@ -224,7 +134,7 @@ export default function ActualityPage({}: Props) {
   
   return (
     <div className="flex flex-col gap-5 w-full">
-      <PageTitle title="Actualite" />
+      <PageTitle title="testing" />
       <DataTable columns={columns} data={annonces} />
     </div>
   );

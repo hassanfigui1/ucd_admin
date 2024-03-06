@@ -1,8 +1,8 @@
 "use client"
 
+import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@radix-ui/react-checkbox"
 import { ColumnDef } from "@tanstack/react-table"
-import { Badge } from "lucide-react"
 import { labels, priorities, statuses } from "../data/data"
 import { Task } from "../data/schema"
 import { DataTableColumnHeader } from "./data-table-column-header"
