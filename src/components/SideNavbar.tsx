@@ -54,6 +54,12 @@ export default function SideNavbar({}: Props) {
             variant: "ghost"
           },
           {
+            title: "event",
+            href: "/events",
+            icon: Settings,
+            variant: "ghost"
+          },
+          {
             title: "departements",
             href: "/departement",
             icon: Settings,
