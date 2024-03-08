@@ -1,7 +1,7 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { Checkbox } from "@radix-ui/react-checkbox"
+import { Checkbox } from "@/components/ui/checkbox"
 import { ColumnDef } from "@tanstack/react-table"
 import { labels, priorities, statuses } from "../data/data"
 import { Task } from "../data/schema"

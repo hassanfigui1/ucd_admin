@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import path from "path";
 import { z } from "zod";
-
 import { columns } from "./components/columns";
 import { DataTable } from "./components/data-table";
 import { UserNav } from "./components/user-nav";
@@ -14,17 +13,12 @@ export const metadata: Metadata = {
   description: "A task and issue tracker build using Tanstack Table.",
 };
 
-type Props = {};
-
-// Simulate a database read for tasks.
 async function getTasks() {
   try {
     const data = await fs.readFile(
-      path.join(process.cwd(), "./data/tasks.json")
-    );
-    
+      path.join(process.cwd(), "./src/app/pages/tasks/data/tasks.json")
+      );
     const tasks = JSON.parse(data.toString());
-    console.log("hassan: "+z.array(taskSchema).parse(tasks))
     return z.array(taskSchema).parse(tasks);
   } catch (error) {
     console.error("Error reading tasks file:", error);
@@ -34,7 +28,6 @@ async function getTasks() {
 
 async function page() {
   const tasks = await getTasks();
-
   return (
     <>
       <div className="md:hidden">
