@@ -1,0 +1,52 @@
+{"converter": null,
+"_key": {
+    "path": {
+        "segments": [
+            "tasks",
+            "TASK-8053"
+        ],
+        "offset": 0,
+        "len": 2
+    }
+},
+"type": "document",
+"firestore": {
+    "app": {
+        "_isDeleted": false,
+        "_options": {
+            "apiKey": "AIzaSyBtg-5zWU_hUmlbGo7ZYXWvdPWprRUb3go",
+            "authDomain": "ucdfs-ff4f7.firebaseapp.com",
+            "databaseURL": "https://ucdfs-ff4f7-default-rtdb.firebaseio.com",
+            "projectId": "ucdfs-ff4f7",
+            "storageBucket": "ucdfs-ff4f7.appspot.com",
+            "messagingSenderId": "559020565198",
+            "appId": "1:559020565198:web:9d4268f49e897ff19fa69f",
+            "measurementId": "G-ZEJRMFYCG0"
+        },
+        "_config": {
+            "name": "[DEFAULT]",
+            "automaticDataCollectionEnabled": false
+        },
+        "_name": "[DEFAULT]",
+        "_automaticDataCollectionEnabled": false,
+        "_container": {
+            "name": "[DEFAULT]",
+            "providers": {}
+        }
+    },
+    "databaseId": {
+        "projectId": "ucdfs-ff4f7",
+        "database": "(default)"
+    },
+    "settings": {
+        "host": "firestore.googleapis.com",
+        "ssl": true,
+        "ignoreUndefinedProperties": false,
+        "cacheSizeBytes": 41943040,
+        "experimentalForceLongPolling": false,
+        "experimentalAutoDetectLongPolling": true,
+        "experimentalLongPollingOptions": {},
+        "useFetchStreams": true
+    }
+}
+}

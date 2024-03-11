@@ -1,4 +1,5 @@
 /** @format */
+"use client";
 
 import BarChart from "@/components/BarChart";
 import Card, { CardContent, CardProps } from "@/components/Card";

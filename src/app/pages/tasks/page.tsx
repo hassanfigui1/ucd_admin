@@ -1,33 +1,48 @@
-import { promises as fs } from "fs";
-import { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
-import path from "path";
-import { z } from "zod";
 import { columns } from "./components/columns";
 import { DataTable } from "./components/data-table";
 import { UserNav } from "./components/user-nav";
-import { taskSchema } from "./data/schema";
 
-export const metadata: Metadata = {
-  title: "Tasks",
-  description: "A task and issue tracker build using Tanstack Table.",
-};
+// pages/tasks.tsx
 
-async function getTasks() {
-  try {
-    const data = await fs.readFile(
-      path.join(process.cwd(), "./src/app/pages/tasks/data/tasks.json")
-      );
-    const tasks = JSON.parse(data.toString());
-    return z.array(taskSchema).parse(tasks);
-  } catch (error) {
-    console.error("Error reading tasks file:", error);
-    return []; // Return an empty array or handle the error as appropriate
-  }
+import { useEffect, useState } from "react";
+import EventDataService from '../../../services/tasks';
+
+export interface Event {
+  id: string;
+  title: string;
+  status: string;
+  label: string;
+  priority: string;
+  description:string;
 }
+const Page = () => {
+  const [events, setEvents] = useState<Event[]>([]);
 
-async function page() {
-  const tasks = await getTasks();
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const eventsFromFirestore = await EventDataService.getAllEvents();
+        const eventsArray = eventsFromFirestore.docs.map((doc) => ({
+          id: doc.id,
+          title: doc.data().title,
+          status: doc.data().status,
+          label: doc.data().label,
+          priority: doc.data().priority,
+          description:doc.data().description
+        }));
+        setEvents(eventsArray);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+  
+    fetchEvents();
+  }, []);
+  
+
   return (
     <>
       <div className="md:hidden">
@@ -58,10 +73,10 @@ async function page() {
             <UserNav />
           </div>
         </div>
-        <DataTable data={tasks} columns={columns} />
+        <DataTable data={events} columns={columns} />
       </div>
     </>
   );
-}
+};
 
-export default page;
+export default Page;

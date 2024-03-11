@@ -1,8 +1,11 @@
-// utils/firebaseConfig.ts
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Replace this with your Firebase configuration
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBtg-5zWU_hUmlbGo7ZYXWvdPWprRUb3go",
   authDomain: "ucdfs-ff4f7.firebaseapp.com",
@@ -12,11 +15,8 @@ const firebaseConfig = {
   messagingSenderId: "559020565198",
   appId: "1:559020565198:web:9d4268f49e897ff19fa69f",
   measurementId: "G-ZEJRMFYCG0"
-};// Initialize Firebase
+};
+
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firestore
-const db = getFirestore(app);
-
-export { db };
-
+export const db = getFirestore();

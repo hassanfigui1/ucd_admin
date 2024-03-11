@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 import React, { ReactNode, useEffect, useState } from 'react';
-import getFirestore from '../lib/firebase/config';
 const auth = getAuth(getFirestore);
 
 interface AuthContextProviderProps {

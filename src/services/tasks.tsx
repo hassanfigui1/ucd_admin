@@ -1,39 +1,44 @@
 import {
-    addDoc,
-    collection,
-    deleteDoc,
-    doc,
-    getDoc,
-    getDocs,
-    updateDoc,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  updateDoc,
 } from "firebase/firestore";
 import { db } from "../lib/firebase/config";
 
-const tasksCollectionRef = collection(db, "tasks");
+const eventsCollectionRef = collection(db, "tasks");
 
-class TaskDataService {
-  addTask = (newTask: any) => {
-    return addDoc(tasksCollectionRef, newTask);
+class EventDataService {
+  // Ajouter un nouvel événement
+  addEvent = (newEvent: any) => {
+    return addDoc(eventsCollectionRef, newEvent);
   };
 
-  updateTask = (id: string, updateTask: any) => {
-    const taskDoc = doc(db, "tasks", id);
-    return updateDoc(taskDoc, updateTask);
+  // Mettre à jour un événement existant
+  updateEvent = (id: string, updateEvent: any) => {
+    const eventDoc = doc(db, "tasks", id);
+    return updateDoc(eventDoc, updateEvent);
   };
 
-  deleteTask = (id: string) => {
-    const taskDoc = doc(db, "tasks", id);
-    return deleteDoc(taskDoc);
+  // Supprimer un événement
+  deleteEvent = (id: string) => {
+    const eventDoc = doc(db, "tasks", id);
+    return deleteDoc(eventDoc);
   };
 
-  getAllTasks = () => {
-    return getDocs(tasksCollectionRef);
+  // Obtenir tous les événements
+  getAllEvents = () => {
+    return getDocs(eventsCollectionRef);
   };
 
-  getTask = (id: string) => {
-    const taskDoc = doc(db, "tasks", id);
-    return getDoc(taskDoc);
+  // Obtenir un événement spécifique
+  getEvent = (id: string) => {
+    const eventDoc = doc(db, "tasks", id);
+    return getDoc(eventDoc);
   };
 }
 
-export default new TaskDataService();
+export default new EventDataService();

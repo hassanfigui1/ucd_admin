@@ -1,13 +1,13 @@
 import { db } from "../lib/firebase/config";
 
 import {
-    addDoc,
-    collection,
-    deleteDoc,
-    doc,
-    getDoc,
-    getDocs,
-    updateDoc,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  updateDoc,
 } from "firebase/firestore";
 
 const annoncesCollectionRef = collection(db, "annonces");
@@ -36,4 +36,5 @@ class ActualiteDataService {
   };
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new ActualiteDataService();

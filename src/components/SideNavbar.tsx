@@ -26,7 +26,7 @@ export default function SideNavbar({}: Props) {
   }
 
   return (
-    <div className="relative min-w-[80px] border-r px-3  pb-10 pt-24 ">
+    <div className="relative min-w-[100px] border-r px-3  pb-10 pt-24 ">
         <div className="absolute right-[-20px] top-7">
           <Button
             onClick={toggleSidebar}
@@ -52,7 +52,7 @@ export default function SideNavbar({}: Props) {
             variant: "ghost"
           },
           {
-            title: "event",
+            title: "events",
             href: "/pages/tasks",
             icon: Settings,
             variant: "ghost"
@@ -60,6 +60,12 @@ export default function SideNavbar({}: Props) {
           {
             title: "departements",
             href: "/pages/departement",
+            icon: Settings,
+            variant: "ghost"
+          },
+          {
+            title: "events",
+            href: "/events",
             icon: Settings,
             variant: "ghost"
           },

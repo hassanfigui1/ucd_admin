@@ -2,16 +2,16 @@
 
 "use client";
 
-import Link from "next/link";
 import { LucideIcon } from "lucide-react";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { usePathname } from "next/navigation";
 
